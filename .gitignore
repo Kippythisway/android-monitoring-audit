@@ -1,0 +1,22 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
+
+# adb / device artifacts that must never be committed
+*.apk
+*.db
+*.sqlite*
+*.log
+*.txt
+!requirements.txt
+survey.txt
+evidence/
+
+# secrets / personal
+*.pem
+*.key
+.env
