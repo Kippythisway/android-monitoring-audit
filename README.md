@@ -80,6 +80,8 @@ adb shell "pm list packages | grep -c <目标包>"   # 期望 0
 ```
 
 > 全部脚本都不修改系统分区，最坏情况用 `pm install-existing <pkg>` 一键还原。
+>
+> **只想动手、不想读原理**：打开 [PROMPT.md](PROMPT.md)，复制那段代码块，粘给 AI 即可。
 
 ---
 
@@ -159,6 +161,7 @@ adb shell "pm list packages | grep -c <目标包>"   # 期望 0
 ```
 .
 ├── README.md                    你正在看的这份
+├── PROMPT.md                    ★ 一屏可复制的提示词：直接粘给 AI Agent 就能开跑
 ├── PLAYBOOK.md                  主手册：T0–T4 权限阶梯 + 盘查流程 + 处置矩阵 + 决策树
 ├── PUBLISH.md                   维护者用：发布步骤与自检清单
 ├── LICENSE                      MIT（文档部分 CC BY 4.0）
