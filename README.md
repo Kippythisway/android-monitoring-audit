@@ -8,6 +8,33 @@
 
 ---
 
+## ⚡ 一键执行（复制一行，粘上就跑）
+
+> 前置：`adb` 已在 PATH 中（没有的话装 [platform-tools](https://developer.android.com/studio/releases/platform-tools)，
+> 或把命令里的 `adb` 替换成绝对路径）。手机已开 USB 调试并授权。
+> 脚本已在 Android 14 / Android 16 设备上实跑通过，输出约 120 行只读信息。
+
+**A. 命令行盘点当前设备**（只读，不改任何东西；macOS / Linux / Git Bash）
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Kippythisway/android-monitoring-audit/main/scripts/survey.sh -o /tmp/survey.sh && adb push /tmp/survey.sh /data/local/tmp/ >/dev/null && adb shell "sh /data/local/tmp/survey.sh" | tee survey.txt
+```
+
+**B. Windows PowerShell**
+
+```powershell
+iwr https://raw.githubusercontent.com/Kippythisway/android-monitoring-audit/main/scripts/survey.sh -OutFile "$env:TEMP\survey.sh"; adb push "$env:TEMP\survey.sh" /data/local/tmp/; adb shell "sh /data/local/tmp/survey.sh" | Tee-Object survey.txt
+```
+
+**C. 交给 AI 代跑**（把整段提示词粘给你的 AI 助手，它自己执行上面的命令并给出结论）
+
+👉 打开 [PROMPT.md](PROMPT.md)，复制里面的代码块即可。
+
+> 三条都只做盘查，不卸载、不修改系统。看完输出再决定要不要处置——
+> 处置命令在下面的[快速开始](#快速开始t120-分钟)里，逐条给。
+
+---
+
 ## 先说结论（赶时间看这段）
 
 预装采集组件可以粗暴分成三层，很多人卡住是因为把三层混为一谈：
